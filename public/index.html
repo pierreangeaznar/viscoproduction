@@ -54,10 +54,17 @@
       z-index: 1;
     }
 
-    /* Logo container */
-    .hero__logo {
+    /* Content container */
+    .hero__content {
       position: relative;
       z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero__logo {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -66,9 +73,22 @@
     }
 
     .hero__logo img {
-      max-width: 320px;
+      max-width: 360px;
       width: 80vw;
       height: auto;
+    }
+
+    .hero__text {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 700;
+      text-align: center;
+      margin-top: 2rem;
+      line-height: 1.2;
+      opacity: 0;
+      animation: fadeIn 2s ease-out 1s forwards;
     }
 
     @keyframes fadeIn {
@@ -81,11 +101,15 @@
       .hero__logo img {
         max-width: 200px;
       }
+      .hero__text {
+        font-size: 1.5rem;
+        padding: 0 1rem;
+      }
     }
 
     @media (min-width: 768px) and (max-width: 980px) {
       .hero__logo img {
-        max-width: 260px;
+        max-width: 280px;
       }
     }
   </style>
@@ -97,8 +121,11 @@
       <source src="https://viscoproduction.com/wp-content/uploads/2023/11/8EFFCAA4-8AC9-4C7A-8900-6EE4EF146B7B.mp4" type="video/mp4" />
     </video>
     <div class="hero__overlay"></div>
-    <div class="hero__logo">
-      <img src="/logo.png" alt="VISCO PRODUCTION" />
+    <div class="hero__content">
+      <div class="hero__logo">
+        <img src="/visco-logo.png" alt="VISCO PRODUCTION" />
+      </div>
+      <p class="hero__text">T'en penses quoi Zaccharie ?</p>
     </div>
   </section>
 
