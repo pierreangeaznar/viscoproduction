@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VISCO PRODUCTION</title>
+  <meta name="description" content="VISCO PRODUCTION - Production audiovisuelle" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      font-family: 'Open Sans', Arial, sans-serif;
+    }
+
+    /* Full-screen video section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Video background */
+    .hero__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* Dark overlay */
+    .hero__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 95%);
+      z-index: 1;
+    }
+
+    /* Logo container */
+    .hero__logo {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeIn 2s ease-out 0.5s forwards;
+    }
+
+    .hero__logo img {
+      max-width: 320px;
+      width: 80vw;
+      height: auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 767px) {
+      .hero__logo img {
+        max-width: 200px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 980px) {
+      .hero__logo img {
+        max-width: 260px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <video class="hero__video" autoplay loop muted playsinline>
+      <source src="https://viscoproduction.com/wp-content/uploads/2023/11/8EFFCAA4-8AC9-4C7A-8900-6EE4EF146B7B.mp4" type="video/mp4" />
+    </video>
+    <div class="hero__overlay"></div>
+    <div class="hero__logo">
+      <img src="/logo.png" alt="VISCO PRODUCTION" />
+    </div>
+  </section>
+
+</body>
+</html>
